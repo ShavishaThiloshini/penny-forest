@@ -1,4 +1,4 @@
-# 🌸 CoinSprout – Personal Budget Tracker
+# 🌸 penny forest – Personal Budget Tracker
 
 A multi-page Personal Budget Tracker web application with a cozy,
 Studio Ghibli–inspired UI.
