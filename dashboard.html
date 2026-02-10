@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny Forest | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="ghibli-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h1>Penny Forest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="calculator.html"><i class="fas fa-calculator"></i> Budget</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li>
+                    <button class="btn-logout" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </li>
+            </ul>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard">
+            <header class="dashboard-header">
+                <h2>Welcome, <span id="user-greeting">Explorer</span>!</h2>
+                <p>Every coin is a seed for a dream. Keep growing, little explorer!</p>
+            </header>
+
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <div class="card income-card">
+                    <div class="card-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Total Income</h3>
+                        <p class="amount" id="total-income">LKR 0</p>
+                    </div>
+                </div>
+                <div class="card expense-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Total Expenses</h3>
+                        <p class="amount" id="total-expenses">LKR 0</p>
+                    </div>
+                </div>
+                <div class="card balance-card">
+                    <div class="card-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Balance</h3>
+                        <p class="amount" id="balance">LKR 0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <section class="recent-transactions">
+                <div class="section-header">
+                    <h3>Recent Transactions</h3>
+                    <a href="calculator.html" class="btn-primary">
+                        <i class="fas fa-plus"></i> Add New
+                    </a>
+                </div>
+                <div class="transactions-list" id="transactions-list">
+                    <div class="empty-state">
+                        <i class="fas fa-wind"></i>
+                        <p>No transactions yet. Add your first one!</p>
+                        <a href="calculator.html" class="btn-secondary btn-small">
+                            <i class="fas fa-plus"></i> Add Transaction
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Monthly Progress -->
+            <section class="monthly-progress">
+                <h3>Monthly Budget Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="budget-progress"></div>
+                </div>
+                <div class="progress-info">
+                    <span>Spent: <span id="spent-amount">LKR 0</span></span>
+                    <span>Budget: <span id="total-budget">LKR 0</span></span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

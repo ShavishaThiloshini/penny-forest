@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny Forest | Budget Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="ghibli-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h1>Penny Forest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="calculator.html" class="active"><i class="fas fa-calculator"></i> Budget</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li>
+                    <button class="btn-logout" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </li>
+            </ul>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="calculator">
+            <header class="calculator-header">
+                <h2>My Cozy Budget Tracker</h2>
+                <p>Add income or expenses to track your financial forest</p>
+            </header>
+
+            <div class="calculator-container">
+                <!-- Current Balance -->
+                <div class="current-balance">
+                    <h3>Current Balance</h3>
+                    <p class="balance-amount" id="current-balance">Rs.0</p>
+                </div>
+
+                <!-- Form -->
+                <form id="expense-form" class="expense-form">
+                    <div class="form-group">
+                        <label for="amount">Amount (Rs)</label>
+                        <input type="number" id="amount" placeholder="e.g., 5000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="Food">Food & Dining</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Home">Forest Home</option>
+                            <option value="Health">Health</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Gifts">Gifts</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="e.g., Groceries, Book, Tea" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type</label>
+                        <div class="type-selector">
+                            <div class="type-option active" data-type="expense">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Expense</span>
+                            </div>
+                            <div class="type-option" data-type="income">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>Income</span>
+                            </div>
+                        </div>
+                        <input type="hidden" id="type" value="expense">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Save Transaction
+                        </button>
+                        <button type="button" id="clear-btn" class="btn-secondary">
+                            <i class="fas fa-broom"></i> Clear
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Recent Transactions -->
+                <div class="recent-transactions-calculator">
+                    <h3>Recent Transactions</h3>
+                    <div class="transactions-mini-list" id="recent-transactions">
+                        <!-- Will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

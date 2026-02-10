@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny Forest | Register</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="ghibli-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h1>Penny Forest</h1>
+            </div>
+            <a href="index.html" class="btn-secondary btn-small">
+                <i class="fas fa-arrow-left"></i> Back to Login
+            </a>
+        </nav>
+
+        <!-- Register Container -->
+        <main class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Start Your Journey</h2>
+                    <p>Create an account to begin tracking</p>
+                </div>
+
+                <!-- Google Register -->
+                <button class="btn-google" id="google-register">
+                    <i class="fab fa-google"></i> Sign up with Google
+                </button>
+
+                <div class="divider">
+                    <span>or sign up with email</span>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Full Name</label>
+                        <input type="text" id="register-name" placeholder="Forest Explorer" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-email">Email Address</label>
+                        <input type="email" id="register-email" placeholder="explorer@forestfunds.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="register-password" placeholder="••••••••" required>
+                            <button type="button" class="toggle-password" id="toggle-register-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <p class="form-help">Must be at least 8 characters</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthly-budget">Monthly Budget Goal (LKR)</label>
+                        <input type="number" id="monthly-budget" placeholder="e.g., 100000" value="100000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" required>
+                            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-auth">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+
+                    <div class="auth-footer">
+                        <p>Already have an account? <a href="index.html">Sign in</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Welcome Message -->
+            <div class="welcome-message">
+                <div class="welcome-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h2>Plant Your Financial Seeds</h2>
+                <p>Join thousands of explorers who are growing their savings with our intuitive budget tracker. Start your journey to financial wellness today.</p>
+                <div class="benefits">
+                    <div class="benefit">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure & Private</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Real-time Updates</span>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile Friendly</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

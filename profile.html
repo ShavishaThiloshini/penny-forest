@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penny Forest | Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="ghibli-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h1>Penny Forest</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="calculator.html"><i class="fas fa-calculator"></i> Budget</a></li>
+                <li><a href="analytics.html"><i class="fas fa-chart-pie"></i> Reports</a></li>
+                <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                <li>
+                    <button class="btn-logout" id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </li>
+            </ul>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="profile">
+            <header class="profile-header">
+                <h2>Your Profile</h2>
+                <p>Manage your account and preferences</p>
+            </header>
+
+            <div class="profile-container">
+                 <!-- Update this section in profile.html -->
+                    <div class="profile-avatar">
+                        <div class="avatar-img" id="avatar-img">
+                            <!-- Avatar will be loaded here -->
+                        </div>
+                        <button class="btn-secondary btn-small" id="change-avatar">
+                            <i class="fas fa-camera"></i> Change
+                        </button>
+                    </div>
+
+                    <!-- Add this modal after the main content but before the script tag -->
+                    <div class="modal" id="avatar-modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Choose Your Avatar</h3>
+                                <button class="close-modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="avatar-options">
+                                    <div class="avatar-option" data-avatar="1">
+                                        <div class="avatar-preview">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <span>Explorer</span>
+                                    </div>
+                                    <div class="avatar-option" data-avatar="2">
+                                        <div class="avatar-preview">
+                                            <i class="fas fa-leaf"></i>
+                                        </div>
+                                        <span>Nature</span>
+                                    </div>
+                                    <div class="avatar-option" data-avatar="3">
+                                        <div class="avatar-preview">
+                                            <i class="fas fa-cat"></i>
+                                        </div>
+                                        <span>Catbus</span>
+                                    </div>
+                                    <div class="avatar-option" data-avatar="4">
+                                        <div class="avatar-preview">
+                                            <i class="fas fa-dragon"></i>
+                                        </div>
+                                        <span>Dragon</span>
+                                    </div>
+                                    <div class="avatar-option" data-avatar="5">
+                                        <div class="avatar-preview">
+                                            <i class="fas fa-robot"></i>
+                                        </div>
+                                        <span>Robot</span>
+                                    </div>
+                                    <div class="avatar-option" data-avatar="6">
+                                        <div class="avatar-preview">
+                                            <i class="fas fa-feather-alt"></i>
+                                        </div>
+                                    <span>Totoro</span>
+                                    </div>
+                                </div>
+            
+                                <!-- Custom Avatar Upload (optional) -->
+                                <div class="avatar-upload">
+                                    <h4>Upload Your Own</h4>
+                                    <div class="upload-area" id="upload-area">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Click to upload image</p>
+                                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                                        </div>
+                                    <p class="upload-help">Maximum file size: 2MB</p>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn-secondary" id="cancel-avatar">Cancel</button>
+                                <button class="btn-primary" id="save-avatar">Save Avatar</button>
+                            </div>
+                        </div>
+                    </div>
+                                        
+                    <div class="profile-info">
+                        <h3 id="user-name">Forest Explorer</h3>
+                        <p class="user-email" id="user-email">explorer@forestfunds.com</p>
+                        <p class="member-since">Member since: <span id="member-since">March 2023</span></p>
+                    </div>
+                </div>
+
+                <!-- Settings Form -->
+                <div class="settings-form">
+                    <h3>Profile Settings</h3>
+                    
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="monthly-budget">Monthly Budget Goal (Rs)</label>
+                            <input type="number" id="monthly-budget" placeholder="e.g., 100000" required>
+                            <p class="form-help">Set a monthly spending limit to help you save</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency">
+                                <option value="¥">Rupees (Rs)</option>
+                                <option value="$">US Dollar ($)</option>
+                                <option value="€">Euro (€)</option>
+                                <option value="£">British Pound (£)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i> Save Profile
+                        </button>
+                    </form>
+                </div>
+
+                <!-- App Settings -->
+                <div class="app-settings">
+                    <h3>App Preferences</h3>
+                    
+                    <div class="settings-option">
+                        <div class="setting-info">
+                            <h4>Theme</h4>
+                            <p>Switch between light and dark mode</p>
+                        </div>
+                        <div class="theme-toggle" id="theme-toggle">
+                            <div class="toggle-slider">
+                                <div class="toggle-knob"></div>
+                            </div>
+                            <span>Dark Mode</span>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-option">
+                        <div class="setting-info">
+                            <h4>Notifications</h4>
+                            <p>Receive alerts for large expenses</p>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="notifications" checked>
+                            <label for="notifications" class="toggle-label"></label>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-option">
+                        <div class="setting-info">
+                            <h4>Budget Reminders</h4>
+                            <p>Weekly updates on your spending</p>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="reminders" checked>
+                            <label for="reminders" class="toggle-label"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="profile-stats">
+                    <h3>Your Financial Journey</h3>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <h4>Total Transactions</h4>
+                            <p class="stat-number" id="total-transactions">0</p>
+                        </div>
+                        <div class="stat">
+                            <h4>Months Tracked</h4>
+                            <p class="stat-number" id="months-tracked">1</p>
+                        </div>
+                        <div class="stat">
+                            <h4>Biggest Expense</h4>
+                            <p class="stat-number" id="biggest-expense">Rs.0</p>
+                        </div>
+                        <div class="stat">
+                            <h4>Total Saved</h4>
+                            <p class="stat-number" id="total-saved">Rs.0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="profile-actions">
+                    <button class="btn-secondary" id="export-data">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                    <button class="btn-secondary" id="reset-data">
+                        <i class="fas fa-redo"></i> Reset Data
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
