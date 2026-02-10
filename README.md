@@ -24,7 +24,7 @@ Studio Ghibli–inspired UI.
 - Rounded components and soft animations
 
 ## 🚀 Live Demo
-(Add your GitHub Pages link here)
+https://shavishathiloshini.github.io/penny-forest/
 
 ## 📚 What I Learned
 - Structuring multi-page web applications
